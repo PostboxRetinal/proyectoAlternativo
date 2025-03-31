@@ -3,13 +3,13 @@ import { getAuth, GoogleAuthProvider } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-	apiKey: 'AIzaSyByNJ4SU42MLa3ZTUVoXNr1Z17z8G68gOI',
-	authDomain: 'challenge21-f6367.firebaseapp.com',
-	projectId: 'challenge21-f6367',
-	storageBucket: 'challenge21-f6367.firebasestorage.app',
-	messagingSenderId: '984379837832',
-	appId: '1:984379837832:web:18fee1aa2328c2b0133e3d',
-	measurementId: 'G-BPBFBM2R9E',
+	apiKey: import.meta.env.FIREBASE_apiKey,
+	authDomain: import.meta.env.FIREBASE_authDomain,
+	projectId: import.meta.env.FIREBASE_projectId,
+	storageBucket: import.meta.env.FIREBASE_storageBucket,
+	messagingSenderId: import.meta.env.FIREBASE_messagingSenderId,
+	appId: import.meta.env.FIREBASE_appId,
+	measurementId: import.meta.env.FIREBASE_measurementId,
 };
 
 const app = initializeApp(firebaseConfig);
