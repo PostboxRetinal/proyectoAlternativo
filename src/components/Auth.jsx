@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { useAuth } from '../hooks/useAuth';
 import Routeer from './Routeer';
@@ -33,7 +33,7 @@ const Auth = () => {
 
 	const isValidForm = useMemo(() => {
 		// Validación del formulario
-		return email.includes('@') && password.length >= 6;
+		return email.includes('@') && password.length >= 6 && password.length <= 128;
 	}, [email, password]);
 
 	return (
@@ -55,11 +55,6 @@ const Auth = () => {
 								</>
 							)}
 						</h2>
-						<legend>
-							<small>
-								(todo funciona 100% real no fake, basado en mi challenge 22)
-							</small>
-						</legend>
 					</div>
 
 					<form onSubmit={handleSubmit} className="space-y-4">
